@@ -1,0 +1,6 @@
+# List of file comparisons to perform
+comparisons:
+  - excel_file: "NAWS_A2E1103.xlsx"
+    csv_file: "NAWS_A2E1103.csv"
+  - excel_file: "NAWS_F2Y1103.xlsx"
+    csv_file: "NAWS_F2Y1103.csv"
