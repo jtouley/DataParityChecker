@@ -1,7 +1,48 @@
+# Enhanced YAML configuration with explicit column type handling
 comparisons:
   - excel_file: "input_files/examples/Completed_Residential_Demolitions_-8776591415274907616.xlsx"
     csv_file: "input_files/examples/Completed_Residential_Demolitions_-8776591415274907616.csv"
-    max_rows:    # user-defined, unlimited if omitted
+    # Columns that should be processed as dates
+    date_columns: ["demolition_date"]
+    # Columns that should be explicitly treated as strings (no type conversion)
+    string_columns: [
+      "address", 
+      "demolition_rfp_group", 
+      "contractor_name", 
+      "neighborhood", 
+      "street_name", 
+      "street_type", 
+      "block_range"
+    ]
+    # Columns that should be processed as numeric values
+    numeric_columns: ["price", "latitude", "longitude", "x", "y", "objectid"]
+    # Specify key columns for row matching (optional)
+    key_columns: ["objectid"]
+    # Normalize case for all text columns
+    normalize_case: true
+    # Maximum rows to include in difference examples
+    max_rows: null # null means all rows
+  
   - excel_file: "input_files/examples/section111validicd10-jan2025_0.xlsx"
     csv_file: "input_files/examples/section111validicd10-jan2025_0.csv"
-    max_rows: 
+    # Columns that should be processed as dates
+    date_columns: []
+    # Columns that should be explicitly treated as strings (no type conversion)
+    string_columns: ["code"]
+    # Columns that should be processed as numeric values
+    numeric_columns: []
+    # Normalize case for all text columns
+    normalize_case: true
+    max_rows: 1000 # Maximum rows to include in difference examples
+
+  - excel_file: "input_files/examples/BLM_OR_Leases_and_Claims_Polygon_Hub_7523122887667076412.xlsx"
+    csv_file: "input_files/examples/BLM_OR_Leases_and_Claims_Polygon_Hub_5943641812742462762.csv"
+    # Columns that should be processed as dates
+    date_columns: []
+    # Columns that should be explicitly treated as strings (no type conversion)
+    string_columns: ["GLOBALID"]
+    # Columns that should be processed as numeric values
+    numeric_columns: []
+    # Normalize case for all text columns
+    normalize_case: true
+    max_rows: null
