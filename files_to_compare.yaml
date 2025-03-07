@@ -1,6 +1,7 @@
-# List of file comparisons to perform
 comparisons:
-  - excel_file: "NAWS_A2E1103.xlsx"
-    csv_file: "NAWS_A2E1103.csv"
-  - excel_file: "NAWS_F2Y1103.xlsx"
-    csv_file: "NAWS_F2Y1103.csv"
+  - excel_file: "input_files/examples/Completed_Residential_Demolitions_-8776591415274907616.xlsx"
+    csv_file: "input_files/examples/Completed_Residential_Demolitions_-8776591415274907616.csv"
+    max_rows:    # user-defined, unlimited if omitted
+  - excel_file: "input_files/examples/section111validicd10-jan2025_0.xlsx"
+    csv_file: "input_files/examples/section111validicd10-jan2025_0.csv"
+    max_rows: 
